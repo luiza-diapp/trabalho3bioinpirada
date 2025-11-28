@@ -1,0 +1,120 @@
+Initial dataset info:
+Train shape: (125973, 41)
+Test  shape: (22544, 41)
+X_train columns: Index(['duration', 'protocol_type', 'service', 'flag', 'src_bytes',
+       'dst_bytes', 'land', 'wrong_fragment', 'urgent', 'hot',
+       'num_failed_logins', 'logged_in', 'num_compromised', 'root_shell',
+       'su_attempted', 'num_root', 'num_file_creations', 'num_shells',
+       'num_access_files', 'num_outbound_cmds', 'is_host_login',
+       'is_guest_login', 'count', 'srv_count', 'serror_rate',
+       'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 'same_srv_rate',
+       'diff_srv_rate', 'srv_diff_host_rate', 'dst_host_count',
+       'dst_host_srv_count', 'dst_host_same_srv_rate',
+       'dst_host_diff_srv_rate', 'dst_host_same_src_port_rate',
+       'dst_host_srv_diff_host_rate', 'dst_host_serror_rate',
+       'dst_host_srv_serror_rate', 'dst_host_rerror_rate',
+       'dst_host_srv_rerror_rate'],
+      dtype='object')
+
+After reducing 'service' categories:
+Train shape: (125973, 41)
+Test  shape: (22544, 41)
+X_train columns: Index(['duration', 'protocol_type', 'service', 'flag', 'src_bytes',
+       'dst_bytes', 'land', 'wrong_fragment', 'urgent', 'hot',
+       'num_failed_logins', 'logged_in', 'num_compromised', 'root_shell',
+       'su_attempted', 'num_root', 'num_file_creations', 'num_shells',
+       'num_access_files', 'num_outbound_cmds', 'is_host_login',
+       'is_guest_login', 'count', 'srv_count', 'serror_rate',
+       'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 'same_srv_rate',
+       'diff_srv_rate', 'srv_diff_host_rate', 'dst_host_count',
+       'dst_host_srv_count', 'dst_host_same_srv_rate',
+       'dst_host_diff_srv_rate', 'dst_host_same_src_port_rate',
+       'dst_host_srv_diff_host_rate', 'dst_host_serror_rate',
+       'dst_host_srv_serror_rate', 'dst_host_rerror_rate',
+       'dst_host_srv_rerror_rate'],
+      dtype='object')
+
+Embedding column: protocol_type
+Embedding column: service
+Embedding column: flag
+After embedding categorical columns:
+Train shape: (125973, 35)
+Test  shape: (22544, 35)
+X_train columns: Index(['duration', 'src_bytes', 'dst_bytes', 'wrong_fragment', 'urgent', 'hot',
+       'num_failed_logins', 'num_compromised', 'num_root',
+       'num_file_creations', 'num_shells', 'num_access_files',
+       'num_outbound_cmds', 'count', 'srv_count', 'serror_rate',
+       'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 'same_srv_rate',
+       'diff_srv_rate', 'srv_diff_host_rate', 'dst_host_count',
+       'dst_host_srv_count', 'dst_host_same_srv_rate',
+       'dst_host_diff_srv_rate', 'dst_host_same_src_port_rate',
+       'dst_host_srv_diff_host_rate', 'dst_host_serror_rate',
+       'dst_host_srv_serror_rate', 'dst_host_rerror_rate',
+       'dst_host_srv_rerror_rate', 'protocol_type_emb', 'service_emb',
+       'flag_emb'],
+      dtype='object')
+
+After normalizing numerical columns:
+Train shape: (125973, 32)
+Test  shape: (22544, 32)
+X_train columns: Index(['duration', 'src_bytes', 'dst_bytes', 'wrong_fragment', 'urgent', 'hot',
+       'num_failed_logins', 'num_compromised', 'num_root',
+       'num_file_creations', 'num_shells', 'num_access_files',
+       'num_outbound_cmds', 'count', 'srv_count', 'serror_rate',
+       'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 'same_srv_rate',
+       'diff_srv_rate', 'srv_diff_host_rate', 'dst_host_count',
+       'dst_host_srv_count', 'dst_host_same_srv_rate',
+       'dst_host_diff_srv_rate', 'dst_host_same_src_port_rate',
+       'dst_host_srv_diff_host_rate', 'dst_host_serror_rate',
+       'dst_host_srv_serror_rate', 'dst_host_rerror_rate',
+       'dst_host_srv_rerror_rate'],
+      dtype='object')
+
+Final dataset info:
+Train shape: (125973, 35)
+Test  shape: (22544, 35)
+X_train columns: Index(['duration', 'src_bytes', 'dst_bytes', 'wrong_fragment', 'urgent', 'hot',
+       'num_failed_logins', 'num_compromised', 'num_root',
+       'num_file_creations', 'num_shells', 'num_access_files',
+       'num_outbound_cmds', 'count', 'srv_count', 'serror_rate',
+       'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 'same_srv_rate',
+       'diff_srv_rate', 'srv_diff_host_rate', 'dst_host_count',
+       'dst_host_srv_count', 'dst_host_same_srv_rate',
+       'dst_host_diff_srv_rate', 'dst_host_same_src_port_rate',
+       'dst_host_srv_diff_host_rate', 'dst_host_serror_rate',
+       'dst_host_srv_serror_rate', 'dst_host_rerror_rate',
+       'dst_host_srv_rerror_rate', 'protocol_type_emb', 'service_emb',
+       'flag_emb'],
+      dtype='object')
+
+[NSA] Self samples (normal): 67343 samples, 35 dimensions.
+[NSA] min_vals (first 10): [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+[NSA] max_vals (first 10): [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+[NSA] mean_vals (first 10): [6.69210054e-03 3.30202431e-05 1.50992822e-05 7.56246709e-03
+ 3.70449752e-05 2.65466080e-03 2.44496837e-04 3.73379216e-05
+ 4.04648821e-05 2.94636780e-04]
+[NSA] median_vals (first 10): [0.00000000e+00 3.18848923e-08 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00]
+
+[NSA] Detectors generated: 6000 (tries: 6000)
+[NSA] Total detectors asked: 6000
+[NSA] Self Radius: 1.4
+[NSA] Total detectors generated: 6000
+[NSA] Radius stats -> mean: 13.0893, min: 8.4178, max: 18.0312
+
+
+[NSA] Confusion Matrix (y_test vs y_pred):
+[[8952  759]
+ [4073 8760]]
+
+[NSA] Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.6873    0.9218    0.7875      9711
+           1     0.9203    0.6826    0.7838     12833
+
+    accuracy                         0.7857     22544
+   macro avg     0.8038    0.8022    0.7856     22544
+weighted avg     0.8199    0.7857    0.7854     22544
+
