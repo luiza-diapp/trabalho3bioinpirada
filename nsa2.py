@@ -230,8 +230,8 @@ print("[NSA] median_vals (first 10):", median_vals[:10])
 print()
 
 # 11. Generate Detectors
-num_detectors = 7500  # you can tune this (e.g. 500, 1000, 3000, ...)
-self_radius  = 1.4   # important hyperparameter to adjust
+num_detectors = 7500  
+self_radius  = 1.4   
 
 detectors = generate_vdetectors(
     self_samples=self_samples,
